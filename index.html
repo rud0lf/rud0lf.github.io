@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+
+        <div class="buttons">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+
+        <p class="footer">Made with ❤️</p>
+    </div>
+
+    <script>
+        const noBtn = document.querySelector('.no');
+
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        });
+
+        document.querySelector('.yes').addEventListener('click', () => {
+            document.body.innerHTML = `
+                <div class="container">
+                    <h1>Yay! 💕🥰</h1>
+                    <p>You just made my day ❤️</p>
+                </div>
+            `;
+        });
+    </script>
+
+</body>
+</html>
